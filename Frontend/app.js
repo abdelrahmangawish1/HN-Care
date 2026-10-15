@@ -5,7 +5,7 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+} from "firebase/auth";
 import {
   addDoc,
   collection,
@@ -19,8 +19,8 @@ import {
   serverTimestamp,
   setDoc,
   updateDoc,
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-import QRCode from "https://esm.sh/qrcode";
+} from "firebase/firestore";
+import QRCode from "qrcode";
 import { languageNames, translate, translations } from "./translations.js";
 
 const languageStorageKey = "hn-care-language";
@@ -84,10 +84,7 @@ function applyLanguage(nextLanguage) {
     }
   });
   renderAuthMode();
-  renderInteractionInputs();
   renderPassportPreview();
-  renderTriageResult();
-  renderCalculatorResults();
   if (currentUser) {
     renderRecords();
     renderMedications();
@@ -841,3 +838,5 @@ function applyPharmacyHoursFilter() {
     setStatus("#pharmacy-status", text("pharmacyNo247"), "error");
   }
 }
+
+applyLanguage(language);
