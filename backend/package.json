@@ -1,0 +1,24 @@
+{
+  "name": "hn-care-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HN-Care backend API starter",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/services-server.js",
+    "legacy:dev": "node --watch src/server.js",
+    "db:check": "node src/scripts/check-database.js",
+    "db:setup": "node src/scripts/setup-database.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "pg": "^8.16.3"
+  }
+}
